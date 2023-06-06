@@ -1,5 +1,7 @@
 import { createBrowserRouter } from "react-router-dom"
 import Root from "../src/components/Root.jsx"
+import Template1 from "./components/Template1.jsx"
+import Template2 from "./components/Template2.jsx"
 
 export const router = createBrowserRouter([
 	{
