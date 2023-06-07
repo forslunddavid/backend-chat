@@ -1,7 +1,7 @@
-function isValidUser(u) {
-	if (typeof u !== "object") {
+function isValidUser(user) {
+	if (typeof user !== "object") {
 		return false
-	} else if (u === null) {
+	} else if (user === null) {
 		return false
 	}
 
@@ -13,6 +13,25 @@ function isValidUser(u) {
 
 	if (!nameIsValid || !passwordIsValid) {
 		return false
+	}
+	return true
+}
+
+function isValidChannel(channel) {
+	if (!channel.name || channel.name.length === 0) return false
+	if (channel.name.length > 50) return false
+	if (typeof channel.locked !== "boolean") return false
+	if (!Array.isArray(channel.messages)) return false
+	for (let message of channel.messages) {
+		if (
+			!message.messageId ||
+			!message.channelId ||
+			!message.userId ||
+			!message.content ||
+			!message.timestamp
+		) {
+			return false
+		}
 	}
 	return true
 }
@@ -43,4 +62,32 @@ function findMaxIdUser(list) {
 	return maxId
 }
 
-export { isValidId, findMaxIdUser, hasId, isValidUser }
+function findMaxIdChannel(list) {
+	let maxId = 0
+	for (const item of list) {
+		if (item.channelId && item.channelId > maxId) {
+			maxId = item.channelId
+		}
+	}
+	return maxId
+}
+
+function findMaxIdMessage(list) {
+	let maxId = 0
+	for (const item of list) {
+		if (item.messageId && item.messageId > maxId) {
+			maxId = item.messageId
+		}
+	}
+	return maxId
+}
+
+export {
+	isValidId,
+	findMaxIdUser,
+	findMaxIdChannel,
+	findMaxIdMessage,
+	hasId,
+	isValidUser,
+	isValidChannel,
+}
