@@ -1,8 +1,11 @@
 import express from "express"
 import cors from "cors"
 import dotenv from "dotenv"
-dotenv.config()
-// import jwt from "jsonwebtoken"
+import userRouter from "./routes/user.js"
+import channelRouter from "./routes/channel.js"
+import messageRouter from "./routes/message.js"
+
+import jwt from "jsonwebtoken"
 // import { join, dirname } from "path"
 // import { fileURLToPath } from "url"
 
@@ -21,6 +24,9 @@ app.use((req, res, next) => {
 })
 
 //routes
+app.use("/api/users", userRouter)
+app.use("/api/channels", channelRouter)
+app.use("/api/messages", messageRouter)
 
 //start server
 app.listen(port, () => {

@@ -1,121 +1,121 @@
 {
 	"user": [
 		{
-			"userId": "u1",
+			"userId": 1,
 			"username": "JohnDoe",
 			"password": "password1",
 			"channels": ["channel1", "channel2"]
 		},
 		{
-			"userId": "u2",
+			"userId": 2,
 			"username": "EmilySmith",
 			"password": "password2",
 			"channels": ["channel1", "channel3", "channel4"]
 		},
 		{
-			"userId": "u3",
+			"userId": 3,
 			"username": "MichaelJohnson",
 			"password": "password3",
 			"channels": ["channel2", "channel4"]
 		},
 		{
-			"userId": "u4",
+			"userId": 4,
 			"username": "SarahWilliams",
 			"password": "password4",
 			"channels": ["channel1", "channel2", "channel3", "channel4"]
 		},
 		{
-			"userId": "u5",
+			"userId": 5,
 			"username": "DanielBrown",
 			"password": "password5",
 			"channels": ["channel3", "channel4"]
 		},
 		{
-			"userId": "u6",
+			"userId": 6,
 			"username": "SophiaLee",
 			"password": "password6",
 			"channels": ["channel2", "channel4"]
 		},
 		{
-			"userId": "u7",
+			"userId": 7,
 			"username": "DavidTaylor",
 			"password": "password7",
 			"channels": ["channel1", "channel3"]
 		},
 		{
-			"userId": "u8",
+			"userId": 8,
 			"username": "OliviaAnderson",
 			"password": "password8",
 			"channels": ["channel1"]
 		},
 		{
-			"userId": "u9",
+			"userId": 9,
 			"username": "JacobMartin",
 			"password": "password9",
 			"channels": ["channel4"]
 		},
 		{
-			"userId": "u10",
+			"userId": 10,
 			"username": "EmmaThompson",
 			"password": "password10",
 			"channels": ["channel2", "channel3", "channel4"]
 		},
 		{
-			"userId": "u11",
+			"userId": 11,
 			"username": "MatthewWilson",
 			"password": "password11",
 			"channels": ["channel3"]
 		},
 		{
-			"userId": "u12",
+			"userId": 12,
 			"username": "AvaGarcia",
 			"password": "password12",
 			"channels": ["channel1", "channel2", "channel3", "channel4"]
 		},
 		{
-			"userId": "u13",
+			"userId": 13,
 			"username": "JamesThomas",
 			"password": "password13",
 			"channels": ["channel1", "channel4"]
 		},
 		{
-			"userId": "u14",
+			"userId": 14,
 			"username": "MiaRobinson",
 			"password": "password14",
 			"channels": ["channel2"]
 		},
 		{
-			"userId": "u15",
+			"userId": 15,
 			"username": "BenjaminClark",
 			"password": "password15",
 			"channels": ["channel1", "channel3"]
 		},
 		{
-			"userId": "u16",
+			"userId": 16,
 			"username": "AbigailHarris",
 			"password": "password16",
 			"channels": ["channel3", "channel4"]
 		},
 		{
-			"userId": "u17",
+			"userId": 17,
 			"username": "EthanYoung",
 			"password": "password17",
 			"channels": ["channel1", "channel2", "channel3"]
 		},
 		{
-			"userId": "u18",
+			"userId": 18,
 			"username": "SofiaWalker",
 			"password": "password18",
 			"channels": ["channel4"]
 		},
 		{
-			"userId": "u19",
+			"userId": 19,
 			"username": "HenryLewis",
 			"password": "password19",
 			"channels": ["channel2", "channel3", "channel4"]
 		},
 		{
-			"userId": "u20",
+			"userId": 20,
 			"username": "AmeliaHall",
 			"password": "password20",
 			"channels": ["channel1", "channel4"]
@@ -123,105 +123,105 @@
 	],
 	"channel": [
 		{
-			"channelId": "channel1",
+			"channelId": 101,
 			"name": "Channel 1",
 			"locked": false,
 			"messages": [
 				{
-					"messageId": "message1",
-					"channelId": "channel1",
-					"userId": "user1",
+					"messageId": 101001,
+					"channelId": 101,
+					"userId": 1,
 					"content": "Hello, everyone!",
 					"timestamp": 1659260400000
 				},
 				{
-					"messageId": "message2",
-					"channelId": "channel1",
-					"userId": "user2",
+					"messageId": 101002,
+					"channelId": 101,
+					"userId": 2,
 					"content": "Welcome to Channel 1!",
 					"timestamp": 1659264000000
 				}
 			]
 		},
 		{
-			"channelId": "channel2",
+			"channelId": 102,
 			"name": "Channel 2",
 			"locked": false,
 			"messages": [
 				{
-					"messageId": "message3",
-					"channelId": "channel2",
-					"userId": "user1",
+					"messageId": 102001,
+					"channelId": 102,
+					"userId": 1,
 					"content": "How is everyone doing?",
 					"timestamp": 1659260400000
 				},
 				{
-					"messageId": "message4",
-					"channelId": "channel2",
-					"userId": "user2",
+					"messageId": 102002,
+					"channelId": 102,
+					"userId": 2,
 					"content": "Let's discuss the latest news!",
 					"timestamp": 1659264000000
 				}
 			]
 		},
 		{
-			"channelId": "channel3",
+			"channelId": 103,
 			"name": "Channel 3",
 			"locked": true,
 			"messages": [
 				{
-					"messageId": "message5",
-					"channelId": "channel3",
-					"userId": "user2",
+					"messageId": 103001,
+					"channelId": 103,
+					"userId": 2,
 					"content": "Only authorized users can access this channel.",
 					"timestamp": 1659260400000
 				},
 				{
-					"messageId": "message6",
-					"channelId": "channel3",
-					"userId": "user7",
+					"messageId": 103002,
+					"channelId": 103,
+					"userId": 7,
 					"content": "I have access to this locked channel.",
 					"timestamp": 1659264000000
 				}
 			]
 		},
 		{
-			"channelId": "channel4",
+			"channelId": 104,
 			"name": "Channel 4",
 			"locked": true,
 			"messages": [
 				{
-					"messageId": "message7",
-					"channelId": "channel4",
-					"userId": "user2",
+					"messageId": 104001,
+					"channelId": 104,
+					"userId": 2,
 					"content": "Only authorized users can access this channel.",
 					"timestamp": 1659260400000
 				},
 				{
-					"messageId": "message8",
-					"channelId": "channel4",
-					"userId": "user3",
+					"messageId": 104002,
+					"channelId": 104,
+					"userId": 3,
 					"content": "I have access to this locked channel.",
 					"timestamp": 1659264000000
 				}
 			]
 		},
 		{
-			"channelId": "channel5",
+			"channelId": 105,
 			"name": "Channel 5",
 			"locked": false,
 			"messages": [
 				{
-					"messageId": "message9",
-					"channelId": "channel5",
-					"userId": "user4",
+					"messageId": 105001,
+					"channelId": 105,
+					"userId": 4,
 					"content": "Let's start a discussion!",
 					"timestamp": 1659260400000
 				},
 				{
-					"messageId": "message10",
-					"channelId": "channel5",
-					"userId": "user5",
+					"messageId": 10,
+					"channelId": 105,
+					"userId": 5,
 					"content": "I'm excited to be part of this channel!",
 					"timestamp": 1659264000000
 				}
