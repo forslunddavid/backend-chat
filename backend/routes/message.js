@@ -6,6 +6,7 @@ import {
 	findMaxIdMessage,
 } from "../data/validate.js"
 import { generateTimestamp } from "../utils/utils.js"
+import jwt from "jsonwebtoken"
 
 const router = express.Router()
 const db = getDb()

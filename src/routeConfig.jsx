@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom"
 import Root from "../src/components/Root.jsx"
-import Template1 from "./components/Template1.jsx"
-import Template2 from "./components/Template2.jsx"
+import Chat from "./components/Chat.jsx"
+import Login from "./components/Login.jsx"
 
 export const router = createBrowserRouter([
 	{
@@ -10,11 +10,11 @@ export const router = createBrowserRouter([
 		children: [
 			{
 				path: "template1",
-				element: <Template1 />,
+				element: <Login />,
 			},
 			{
 				path: "template2",
-				element: <Template2 />,
+				element: <Chat />,
 			},
 		],
 	},
