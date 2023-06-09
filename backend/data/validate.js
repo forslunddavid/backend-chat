@@ -5,11 +5,11 @@ function isValidUser(user) {
 		return false
 	}
 
-	let nameIsValid = typeof u.name === "string"
-	nameIsValid = nameIsValid && u.name !== ""
+	let nameIsValid = typeof user.name === "string"
+	nameIsValid = nameIsValid && user.name !== ""
 
-	let passwordIsValid = typeof u.password === "string"
-	passwordIsValid = passwordIsValid && u.password !== ""
+	let passwordIsValid = typeof user.password === "string"
+	passwordIsValid = passwordIsValid && user.password !== ""
 
 	if (!nameIsValid || !passwordIsValid) {
 		return false
@@ -36,7 +36,13 @@ function isValidChannel(channel) {
 	return true
 }
 
-function isValidMessage(p) {}
+function isValidMessage(message) {
+	return (
+		typeof message.channelId === "number" &&
+		typeof message.userId === "number" &&
+		typeof message.content === "string"
+	)
+}
 
 function isValidId(x) {
 	let maybeId = Number(x)
@@ -73,13 +79,20 @@ function findMaxIdChannel(list) {
 }
 
 function findMaxIdMessage(list) {
-	let maxId = 0
-	for (const item of list) {
-		if (item.messageId && item.messageId > maxId) {
-			maxId = item.messageId
+	try {
+		let maxId = 0
+		for (const item of list) {
+			if (item.messageId && item.messageId > maxId) {
+				maxId = item.messageId
+				console.log("New maxId:", maxId)
+			}
 		}
+		console.log("Final maxId:", maxId)
+		return maxId
+	} catch (err) {
+		console.log(err)
+		return false
 	}
-	return maxId
 }
 
 export {
@@ -90,4 +103,5 @@ export {
 	hasId,
 	isValidUser,
 	isValidChannel,
+	isValidMessage,
 }
