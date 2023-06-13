@@ -9,7 +9,7 @@ export const router = createBrowserRouter([
 		element: <Root />,
 		children: [
 			{
-				path: "template1",
+				path: "",
 				element: <Login />,
 			},
 			{

@@ -1,7 +1,7 @@
 import { useState } from "react"
 import "../App.css"
-import Header from "./Header"
-import Sidebar from "./Sidebar"
+// import Header from "./Header"
+// import Sidebar from "./Sidebar"
 import { Outlet } from "react-router-dom"
 
 const Root = () => {
@@ -9,13 +9,9 @@ const Root = () => {
 
 	return (
 		<>
-			<Header />
-			<div className="sidebar">
-				<Sidebar />
-			</div>
-			<div>
+			<main>
 				<Outlet />
-			</div>
+			</main>
 		</>
 	)
 }
