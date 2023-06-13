@@ -10,7 +10,9 @@ router.post("/", async (req, res) => {
 	await db.read()
 	if (!req.body || !req.body.username || !req.body.password) {
 		console.log(req.body, "req body")
-		res.sendStatus(400)
+		res.status(400).send({
+			message: "400 Bad Request",
+		})
 		return
 	}
 	const { username, password } = req.body
@@ -18,12 +20,16 @@ router.post("/", async (req, res) => {
 	let found = db.data.user.find((user) => user.username === username)
 	if (!found) {
 		console.log("- felaktigt användarnamn")
-		res.sendStatus(401)
+		res.status(401).send({
+			message: "Felaktigt användarnamn eller lösenord",
+		})
 		return
 	}
 	if (found.password !== password) {
 		console.log("- felaktigt lösenord")
-		res.sendStatus(401)
+		res.status(401).send({
+			message: "Felaktigt användarnamn eller lösenord",
+		})
 		return
 	}
 

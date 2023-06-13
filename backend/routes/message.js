@@ -34,6 +34,7 @@ router.get("/:messageId", async (req, res) => {
 	res.send(maybeMessage)
 })
 
+//GET Messages from a specific channel
 router.get("/channels/:channelId", async (req, res) => {
 	const channelId = Number(req.params.channelId)
 

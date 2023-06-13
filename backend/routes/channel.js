@@ -35,16 +35,25 @@ router.get("/:channelId", async (req, res) => {
 
 //POST /channels
 router.post("/", async (req, res) => {
-	let maybeChannel = req.body
-	if (isValidChannel(maybeChannel)) {
-		await db.read()
-		maybeChannel.channelId = findMaxIdChannel(db.data.channel) + 1
-		db.data.channel.push(maybeChannel)
-		await db.write()
-		res.send({ channelId: maybeChannel.channelId })
-	} else {
+	const maybeChannel = req.body
+
+	if (!isValidChannel(maybeChannel)) {
 		res.sendStatus(400)
+		return
 	}
+
+	await db.read()
+	const newChannelId = findMaxIdChannel(db.data.channel) + 1
+	const newChannel = {
+		channelId: newChannelId,
+		name: maybeChannel.name,
+		locked: maybeChannel.locked,
+	}
+
+	db.data.channel.push(newChannel)
+	await db.write()
+
+	res.send({ channelId: newChannelId })
 })
 
 // DELETE /channels/:channelId
@@ -75,23 +84,34 @@ router.put("/:channelId", async (req, res) => {
 		res.sendStatus(400)
 		return
 	}
-	let channelId = Number(req.params.channelId)
-	if (!isValidChannel(req.body)) {
+
+	const channelId = Number(req.params.channelId)
+	const maybeChannel = req.body
+
+	if (!isValidChannel(maybeChannel)) {
 		res.sendStatus(400)
 		return
 	}
-	let newChannel = req.body
+
 	await db.read()
-	let oldChannelIndex = db.data.channel.findIndex(
+	const oldChannelIndex = db.data.channel.findIndex(
 		(channel) => channel.channelId === channelId
 	)
+
 	if (oldChannelIndex === -1) {
 		res.sendStatus(404)
 		return
 	}
-	newChannel.channelId = channelId
-	db.data.channel[oldChannelIndex] = newChannel
+
+	const updatedChannel = {
+		channelId,
+		name: maybeChannel.name,
+		locked: maybeChannel.locked,
+	}
+
+	db.data.channel[oldChannelIndex] = updatedChannel
 	await db.write()
+
 	res.sendStatus(200)
 })
 
