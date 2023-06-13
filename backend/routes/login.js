@@ -9,9 +9,10 @@ const secret = process.env.SECRET || "Supersecret"
 router.post("/", async (req, res) => {
 	await db.read()
 	if (!req.body || !req.body.username || !req.body.password) {
-		console.log(req.body, "req body")
+		console.log("felaktigt format 400")
 		res.status(400).send({
-			message: "400 Bad Request",
+			message:
+				"Inkorrekt body, måste innehålla username och password i JSON format",
 		})
 		return
 	}

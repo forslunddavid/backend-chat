@@ -184,13 +184,22 @@
       ]
     },
     {
-      "name": "testuseredited223",
+      "name": "testuser2",
       "password": "12345",
       "channels": [
         "channel 1",
-        "channel 2, channel 3"
+        "channel 2"
       ],
-      "userId": 21
+      "userId": 23
+    },
+    {
+      "name": "testuser2",
+      "password": "12345",
+      "channels": [
+        "channel 1",
+        "channel 2"
+      ],
+      "userId": 24
     }
   ],
   "channel": [
@@ -316,6 +325,13 @@
       "content": "Test5000",
       "messageId": 105005,
       "timestamp": 1686641471318
+    },
+    {
+      "messageId": 105007,
+      "channelId": 105,
+      "userId": 5,
+      "content": "hallå test",
+      "timestamp": 1686687492216
     }
   ]
 }

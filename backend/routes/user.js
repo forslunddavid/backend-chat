@@ -14,18 +14,26 @@ router.get("/", async (req, res) => {
 //GET /users/:userId
 router.get("/:userId", async (req, res) => {
 	if (!isValidId(req.params.userId)) {
-		res.sendStatus(400)
+		console.log("user id måste innehålla siffror")
+		res.status(400).send({
+			message: "User id måste innehålla siffror.",
+		})
 		return
 	}
 	let userId = Number(req.params.userId)
 	await db.read()
 	let maybeUser = db.data.user.find((user) => user.userId === userId)
 	if (!maybeUser) {
-		res.sendStatus(404)
+		console.log("Felaktigt user Id")
+		res.status(404).send({
+			message: "Felaktigt user Id",
+		})
 		return
 	}
 	res.send(maybeUser)
 })
+
+//lägga till koll för att man inte ska kunna ha samma användarnamn?
 
 //POST /users
 router.post("/", async (req, res) => {
@@ -37,21 +45,31 @@ router.post("/", async (req, res) => {
 		await db.write()
 		res.send({ userId: maybeUser.userId })
 	} else {
-		res.sendStatus(400)
+		console.log("inkorrekt body")
+		res.status(400).send({
+			message:
+				"Kontrollera att du fyllt i body korrekt, name, channels och password.",
+		})
 	}
 })
 
 // DELETE /users/:userId
 router.delete("/:userId", async (req, res) => {
 	if (!isValidId(req.params.userId)) {
-		res.sendStatus(400)
+		console.log("felaktigt format")
+		res.status(400).send({
+			message: "Bad Request, user id får endast innehålla siffror",
+		})
 		return
 	}
 	let userId = Number(req.params.userId)
 	await db.read()
 	let maybeUser = db.data.user.find((user) => user.userId === userId)
 	if (!maybeUser) {
-		res.sendStatus(404)
+		console.log("felaktigt id")
+		res.status(404).send({
+			message: "Felaktigt user Id",
+		})
 		return
 	}
 	db.data.user = db.data.user.filter((user) => user.userId !== userId)
@@ -62,19 +80,29 @@ router.delete("/:userId", async (req, res) => {
 //PUT /users/:userId
 router.put("/:userId", async (req, res) => {
 	if (!isValidId(req.params.userId)) {
-		res.sendStatus(400)
+		console.log("user id måste innehålla siffror")
+		res.status(400).send({
+			message: "Inkorrekt user Id, id måste vara siffror",
+		})
 		return
 	}
 	let userId = Number(req.params.userId)
 	if (!isValidUser(req.body)) {
-		res.sendStatus(400)
+		console.log("inkorrekt body")
+		res.status(400).send({
+			message:
+				"Inkorrekt användare, kontrollera body, ska innehålla name, password och channels.",
+		})
 		return
 	}
 	let newUser = req.body
 	await db.read()
 	let oldUserIndex = db.data.user.findIndex((user) => user.userId === userId)
 	if (oldUserIndex === -1) {
-		res.sendStatus(404)
+		console.log("felaktigt user id")
+		res.status(404).send({
+			message: "Inkorrekt user Id",
+		})
 		return
 	}
 	newUser.userId = userId

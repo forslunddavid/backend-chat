@@ -18,7 +18,10 @@ router.get("/", async (req, res) => {
 //GET /channels/:channelId
 router.get("/:channelId", async (req, res) => {
 	if (!isValidId(req.params.channelId)) {
-		res.sendStatus(400)
+		console.log("id måste vara siffror")
+		res.status(400).send({
+			message: "Inkorrekt channel id, måste vara siffror",
+		})
 		return
 	}
 	let channelId = Number(req.params.channelId)
@@ -27,7 +30,10 @@ router.get("/:channelId", async (req, res) => {
 		(channel) => channel.channelId === channelId
 	)
 	if (!maybeChannel) {
-		res.sendStatus(404)
+		console.log("channel id finns inte var god kontrollera")
+		res.status(404).send({
+			message: "Inkorrekt channel id",
+		})
 		return
 	}
 	res.send(maybeChannel)
@@ -38,7 +44,10 @@ router.post("/", async (req, res) => {
 	const maybeChannel = req.body
 
 	if (!isValidChannel(maybeChannel)) {
-		res.sendStatus(400)
+		console.log("Felaktig body")
+		res.status(400).send({
+			message: "felaktig body måste innehålla name och locked",
+		})
 		return
 	}
 
@@ -59,7 +68,10 @@ router.post("/", async (req, res) => {
 // DELETE /channels/:channelId
 router.delete("/:channelId", async (req, res) => {
 	if (!isValidId(req.params.channelId)) {
-		res.sendStatus(400)
+		console.log("inkorrekt id, får endast innehålla siffror")
+		res.status(400).send({
+			message: "inkorrekt id, får endast innehålla siffror",
+		})
 		return
 	}
 	let channelId = Number(req.params.channelId)
@@ -68,7 +80,10 @@ router.delete("/:channelId", async (req, res) => {
 		(channel) => channel.channelId === channelId
 	)
 	if (!maybeChannel) {
-		res.sendStatus(404)
+		console.log("var god kontrollera id")
+		res.status(404).send({
+			message: "var god kontrollera id",
+		})
 		return
 	}
 	db.data.channel = db.data.channel.filter(
@@ -81,7 +96,10 @@ router.delete("/:channelId", async (req, res) => {
 //PUT /channels/:channelId
 router.put("/:channelId", async (req, res) => {
 	if (!isValidId(req.params.channelId)) {
-		res.sendStatus(400)
+		console.log("kontrollera id")
+		res.status(400).send({
+			message: "kontrollera id, måste innehålla siffror",
+		})
 		return
 	}
 
@@ -89,7 +107,10 @@ router.put("/:channelId", async (req, res) => {
 	const maybeChannel = req.body
 
 	if (!isValidChannel(maybeChannel)) {
-		res.sendStatus(400)
+		console.log("kontrollera body")
+		res.status(400).send({
+			message: "kontrollera body, måste innehålla name och locked",
+		})
 		return
 	}
 
@@ -99,7 +120,10 @@ router.put("/:channelId", async (req, res) => {
 	)
 
 	if (oldChannelIndex === -1) {
-		res.sendStatus(404)
+		console.log("inkorrekt id")
+		res.status(404).send({
+			message: "inkorrekt id, var god kontrollera",
+		})
 		return
 	}
 
