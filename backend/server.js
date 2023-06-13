@@ -41,29 +41,29 @@ app.use((req, res, next) => {
 // 	})
 // })
 
-app.use((req, res, next) => {
-	const token = req.headers.authorization
-	if (!token) {
-		res.sendStatus(401)
-		return
-	}
+// app.use((req, res, next) => {
+// 	const token = req.headers.authorization
+// 	if (!token) {
+// 		res.sendStatus(401)
+// 		return
+// 	}
 
-	jwt.verify(token, secret, (err, user) => {
-		if (err) {
-			res.sendStatus(403)
-			return
-		}
+// 	jwt.verify(token, secret, (err, user) => {
+// 		if (err) {
+// 			res.sendStatus(403)
+// 			return
+// 		}
 
-		req.user = user
-		next()
-	})
-})
+// 		req.user = user
+// 		next()
+// 	})
+// })
 
 // Routes
 app.use("/api/users", userRouter)
 app.use("/api/channels", channelRouter)
 app.use("/api/messages", messageRouter)
-app.use("/api", authRouter)
+app.use("/api/login", authRouter)
 
 app.listen(port, () => {
 	console.log(`Server is listening on port ${port}...`)

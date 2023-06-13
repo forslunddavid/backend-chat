@@ -6,7 +6,6 @@ import {
 	findMaxIdMessage,
 } from "../data/validate.js"
 import { generateTimestamp } from "../utils/utils.js"
-import jwt from "jsonwebtoken"
 
 const router = express.Router()
 const db = getDb()
@@ -35,17 +34,33 @@ router.get("/:messageId", async (req, res) => {
 	res.send(maybeMessage)
 })
 
-//GET /channels/:channelId/messages
-router.get("/:channelId/messages", async (req, res) => {
-	if (!isValidId(req.params.channelId)) {
+// GET /channels/:channelId/messages
+// router.get("/channels/:channelId/messages", async (req, res) => {
+// 	if (!isValidId(req.params.channelId)) {
+// 		res.sendStatus(400)
+// 		return
+// 	}
+// 	let channelId = Number(req.params.channelId)
+
+// 	await db.read()
+// 	let messages = db.data.messages.filter(
+// 		(message) => message.channelId === channelId
+// 	)
+// 	res.send({ messages })
+// })
+
+router.get("/channels/:channelId", async (req, res) => {
+	const channelId = Number(req.params.channelId)
+
+	if (isNaN(channelId) || channelId < 0) {
 		res.sendStatus(400)
 		return
 	}
-	let channelId = Number(req.params.channelId)
 	await db.read()
-	let messages = db.data.messages.filter(
+	const messages = db.data.messages.filter(
 		(message) => message.channelId === channelId
 	)
+
 	res.send({ messages })
 })
 
