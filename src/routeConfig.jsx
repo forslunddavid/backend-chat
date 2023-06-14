@@ -1,7 +1,6 @@
 import { createBrowserRouter } from "react-router-dom"
 import Root from "../src/components/Root.jsx"
-import Chat from "./components/Chat.jsx"
-import Login from "./components/Login.jsx"
+import Start from "./components/Start.jsx"
 
 export const router = createBrowserRouter([
 	{
@@ -10,11 +9,7 @@ export const router = createBrowserRouter([
 		children: [
 			{
 				path: "",
-				element: <Login />,
-			},
-			{
-				path: "template2",
-				element: <Chat />,
+				element: <Start />,
 			},
 		],
 	},

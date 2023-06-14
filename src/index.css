@@ -5,3 +5,19 @@
 	font-family: "Helvetica Neue", sans-serif;
 	font-kerning: normal;
 }
+
+.center {
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.center2 {
+	margin: 0;
+	position: absolute;
+	top: 150%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
