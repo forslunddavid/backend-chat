@@ -17,25 +17,6 @@ function isValidUser(user) {
 	return true
 }
 
-// function isValidChannel(channel) {
-// 	if (!channel.name || channel.name.length === 0) return false
-// 	if (channel.name.length > 50) return false
-// 	if (typeof channel.locked !== "boolean") return false
-// 	if (!Array.isArray(channel.messages)) return false
-// 	for (let message of channel.messages) {
-// 		if (
-// 			!message.messageId ||
-// 			!message.channelId ||
-// 			!message.userId ||
-// 			!message.content ||
-// 			!message.timestamp
-// 		) {
-// 			return false
-// 		}
-// 	}
-// 	return true
-// }
-
 function isValidChannel(channel) {
 	if (!channel.name || typeof channel.name !== "string") return false
 	if (channel.name.length > 50) return false

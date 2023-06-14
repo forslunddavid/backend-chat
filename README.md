@@ -1,20 +1,19 @@
 # **Datamodellering**
 
-| Object      | Properties | Datatype    | Beskrivning                                             |
-| :---------- | :--------- | :---------- | :------------------------------------------------------ |
-| **User**    | userId     | number      |                                                         |
-|             | Username   | string      |                                                         |
-|             | Password   | string      |                                                         |
-|             | channels   | array       | Array med id för kanalerna användaren har tillgång till |
-| **Channel** | channelId  | number      |                                                         |
-|             | name       | string      |                                                         |
-|             | locked     | boolean     |                                                         |
-|             | Messages   | [{message}] | Array med message object i                              |
-| **Message** | messageId  | number      |                                                         |
-|             | channelId  | number      | id till kanalen meddelandet hör                         |
-|             | userId     | number      | id till avsändaren                                      |
-|             | content    | string      |                                                         |
-|             | timestamp  | number      |                                                         |
+| Object      | Properties | Datatype | Beskrivning                                             |
+| :---------- | :--------- | :------- | :------------------------------------------------------ |
+| **User**    | userId     | number   |                                                         |
+|             | Username   | string   |                                                         |
+|             | Password   | string   |                                                         |
+|             | channels   | array    | Array med id för kanalerna användaren har tillgång till |
+| **Channel** | channelId  | number   |                                                         |
+|             | name       | string   |                                                         |
+|             | locked     | boolean  |                                                         |
+| **Message** | messageId  | number   |                                                         |
+|             | channelId  | number   | id till kanalen meddelandet hör                         |
+|             | userId     | number   | id till avsändaren                                      |
+|             | content    | string   |                                                         |
+|             | timestamp  | number   |                                                         |
 
 # **API Endpoints**
 
