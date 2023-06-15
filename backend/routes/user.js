@@ -33,8 +33,6 @@ router.get("/:userId", async (req, res) => {
 	res.send(maybeUser)
 })
 
-//lägga till koll för att man inte ska kunna ha samma användarnamn?
-
 //POST /users
 router.post("/", async (req, res) => {
 	let maybeUser = req.body

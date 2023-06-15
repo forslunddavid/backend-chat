@@ -11,4 +11,12 @@ function getDb() {
 	return db
 }
 
+// function getDb() {
+// 	const __dirname = dirname(fileURLToPath(import.meta.url))
+// 	const file = join(__dirname, "db.json")
+// 	const adapter = new JSONFile(file)
+// 	const db = new Low(adapter, {})
+// 	return db
+// }
+
 export { getDb }
