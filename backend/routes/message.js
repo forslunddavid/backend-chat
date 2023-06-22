@@ -267,6 +267,7 @@ router.delete("/:messageId", async (req, res) => {
 //PUT /messages/:messageId
 router.put("/:messageId", async (req, res) => {
 	const messageId = req.params.messageId
+	console.log(messageId)
 	if (!isValidId(messageId)) {
 		console.log("inkorrekt id")
 		res.status(400).send({ message: "Felaktigt id" })
@@ -280,7 +281,10 @@ router.put("/:messageId", async (req, res) => {
 		return
 	}
 	await db.read()
-	const message = db.data.messages.find((m) => m.messageId === messageId)
+	const message = db.data.messages.find(
+		(m) => m.messageId === Number(messageId)
+	)
+	console.log(message)
 	const channel = db.data.channel.find(
 		(c) => c.channelId === message.channelId
 	)
@@ -310,6 +314,9 @@ router.put("/:messageId", async (req, res) => {
 			return
 		}
 	}
+	const oldMessageIndex = db.data.messages.findIndex(
+		(m) => m.messageId === Number(messageId)
+	)
 	let newMessage = req.body
 	newMessage.messageId = messageId
 	newMessage.timestamp = generateTimestamp()
