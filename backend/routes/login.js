@@ -1,7 +1,9 @@
 import express from "express"
 import jwt from "jsonwebtoken"
 import { getDb } from "../data/database.js"
+import dotenv from "dotenv"
 
+dotenv.config()
 const router = express.Router()
 const db = getDb()
 const secret = process.env.SECRET || "Supersecret"
@@ -35,7 +37,7 @@ router.post("/", async (req, res) => {
 	}
 
 	const hour = 60 * 60
-	const payload = { userId: found.id }
+	const payload = { userId: found.userId }
 	let token = jwt.sign(payload, secret, { expiresIn: 2 * hour })
 	console.log("Signed JWT: ", token)
 	let tokenPackage = { token: token }

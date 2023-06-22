@@ -6,10 +6,13 @@ import {
 	findMaxIdMessage,
 } from "../data/validate.js"
 import { generateTimestamp } from "../utils/utils.js"
+import jwt from "jsonwebtoken"
+import dotenv from "dotenv"
 
+dotenv.config()
 const router = express.Router()
 const db = getDb()
-
+const secret = process.env.SECRET || "Supersecret"
 //GET /messages
 router.get("/", async (req, res) => {
 	await db.read()
@@ -17,6 +20,29 @@ router.get("/", async (req, res) => {
 })
 
 //GET /messages/:messageId
+// router.get("/:messageId", async (req, res) => {
+// 	if (!isValidId(req.params.messageId)) {
+// 		console.log("Felaktigt id får endast innehålla siffror")
+// 		res.status(400).send({
+// 			message: "felaktigt id får endast innehålla siffror",
+// 		})
+// 		return
+// 	}
+// 	let messageId = Number(req.params.messageId)
+// 	await db.read()
+// 	let maybeMessage = db.data.messages.find(
+// 		(message) => message.messageId === messageId
+// 	)
+// 	if (!maybeMessage) {
+// 		console.log("var god kontrollera id")
+// 		res.status(404).send({
+// 			message: "var god kontrollera id",
+// 		})
+// 		return
+// 	}
+// 	res.send(maybeMessage)
+// })
+
 router.get("/:messageId", async (req, res) => {
 	if (!isValidId(req.params.messageId)) {
 		console.log("Felaktigt id får endast innehålla siffror")
@@ -25,25 +51,71 @@ router.get("/:messageId", async (req, res) => {
 		})
 		return
 	}
-	let messageId = Number(req.params.messageId)
+	const messageId = Number(req.params.messageId)
 	await db.read()
-	let maybeMessage = db.data.messages.find(
-		(message) => message.messageId === messageId
-	)
-	if (!maybeMessage) {
+	const message = db.data.messages.find((m) => m.messageId === messageId)
+	if (!message) {
 		console.log("var god kontrollera id")
 		res.status(404).send({
 			message: "var god kontrollera id",
 		})
 		return
 	}
-	res.send(maybeMessage)
+	const channel = db.data.channel.find(
+		(c) => c.channelId === message.channelId
+	)
+	if (channel.locked) {
+		const authHeader = req.headers.authorization
+		if (!authHeader) {
+			res.status(401).send({
+				message:
+					"Du måste vara autentiserad för att få åtkomst till denna låsta kanal.",
+			})
+			return
+		}
+		const token = authHeader.replace("Bearer ", "")
+		try {
+			const decoded = jwt.verify(token, secret)
+			const userId = decoded.userId
+			const user = db.data.user.find((u) => u.userId === userId)
+			if (!user || !user.channels.includes(channel.name)) {
+				res.status(401).send({
+					message:
+						"Du har inte behörighet att se detta meddelande i den låsta kanalen.",
+				})
+				return
+			}
+		} catch (error) {
+			res.status(401).send({
+				message: "Ogiltig autentiseringstoken.",
+			})
+			return
+		}
+	}
+	res.send(message)
 })
 
 //GET Messages from a specific channel
+// router.get("/channels/:channelId", async (req, res) => {
+// 	const channelId = Number(req.params.channelId)
+
+// 	if (isNaN(channelId) || channelId < 0) {
+// 		console.log("id får endast innehålla siffror")
+// 		res.status(400).send({
+// 			message: "id får endast innehålla siffror",
+// 		})
+// 		return
+// 	}
+// 	await db.read()
+// 	const messages = db.data.messages.filter(
+// 		(message) => message.channelId === channelId
+// 	)
+
+// 	res.send({ messages })
+// })
+
 router.get("/channels/:channelId", async (req, res) => {
 	const channelId = Number(req.params.channelId)
-
 	if (isNaN(channelId) || channelId < 0) {
 		console.log("id får endast innehålla siffror")
 		res.status(400).send({
@@ -52,10 +124,40 @@ router.get("/channels/:channelId", async (req, res) => {
 		return
 	}
 	await db.read()
-	const messages = db.data.messages.filter(
-		(message) => message.channelId === channelId
-	)
-
+	const channel = db.data.channel.find((c) => c.channelId === channelId)
+	if (!channel) {
+		console.log("channel id finns inte var god kontrollera")
+		res.status(404).send({
+			message: "Inkorrekt channel id",
+		})
+		return
+	}
+	if (channel.locked) {
+		const authHeader = req.headers.authorization
+		if (!authHeader) {
+			res.status(401).send({
+				message:
+					"Du måste vara autentiserad för att få åtkomst till denna låsta kanal.",
+			})
+			return
+		}
+		const token = authHeader.replace("Bearer ", "")
+		try {
+			const decoded = jwt.verify(token, secret)
+			const userId = decoded.userId
+			const user = db.data.user.find((u) => u.userId === userId)
+			if (!user || !user.channels.includes(channel.name)) {
+				res.status(401).send({
+					message: "Du har inte behörighet att se denna låsta kanal.",
+				})
+				return
+			}
+		} catch (error) {
+			res.status(401).send({ message: "Ogiltig autentiseringstoken." })
+			return
+		}
+	}
+	const messages = db.data.messages.filter((m) => m.channelId === channelId)
 	res.send({ messages })
 })
 
