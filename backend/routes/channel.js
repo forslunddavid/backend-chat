@@ -18,29 +18,6 @@ router.get("/", async (req, res) => {
 	res.send(db.data.channel)
 })
 
-//GET /channels/:channelId
-// router.get("/:channelId", async (req, res) => {
-// 	if (!isValidId(req.params.channelId)) {
-// 		console.log("id måste vara siffror")
-// 		res.status(400).send({
-// 			message: "Inkorrekt channel id, måste vara siffror",
-// 		})
-// 		return
-// 	}
-// 	let channelId = Number(req.params.channelId)
-// 	await db.read()
-// 	let maybeChannel = db.data.channel.find(
-// 		(channel) => channel.channelId === channelId
-// 	)
-// 	if (!maybeChannel) {
-// 		console.log("channel id finns inte var god kontrollera")
-// 		res.status(404).send({
-// 			message: "Inkorrekt channel id",
-// 		})
-// 		return
-// 	}
-// 	res.send(maybeChannel)
-// })
 router.get("/:channelId", async (req, res) => {
 	if (!isValidId(req.params.channelId)) {
 		console.log("id måste vara siffror")

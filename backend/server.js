@@ -18,6 +18,10 @@ app.use((req, res, next) => {
 	console.log(`${req.method} ${req.url}`, req.body)
 	next()
 })
+app.use((req, res, next) => {
+	console.log(req.params)
+	next()
+})
 
 // Routes
 app.use("/api/users", userRouter)

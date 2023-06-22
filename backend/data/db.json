@@ -1,389 +1,401 @@
 {
-	"user": [
-		{
-			"userId": 1,
-			"username": "JohnDoe",
-			"password": "password1",
-			"channels": ["channel 1", "channel 2", "channel 4", "channel 5"]
-		},
-		{
-			"userId": 2,
-			"username": "EmilySmith",
-			"password": "password2",
-			"channels": [
-				"Channel 1",
-				"Channel 2",
-				"Channel 3",
-				"Channel 4",
-				"Channel 5"
-			]
-		},
-		{
-			"userId": 3,
-			"username": "MichaelJohnson",
-			"password": "password3",
-			"channels": [
-				"Channel 1",
-				"Channel 2",
-				"Channel 3",
-				"Channel 4",
-				"Channel 5"
-			]
-		},
-		{
-			"userId": 4,
-			"username": "SarahWilliams",
-			"password": "password4",
-			"channels": [
-				"Channel 1",
-				"Channel 2",
-				"Channel 3",
-				"Channel 4",
-				"Channel 5"
-			]
-		},
-		{
-			"userId": 5,
-			"username": "DanielBrown",
-			"password": "password5",
-			"channels": [
-				"Channel 1",
-				"Channel 2",
-				"Channel 3",
-				"Channel 4",
-				"Channel 5"
-			]
-		},
-		{
-			"userId": 6,
-			"username": "SophiaLee",
-			"password": "password6",
-			"channels": [
-				"Channel 1",
-				"Channel 2",
-				"Channel 3",
-				"Channel 4",
-				"Channel 5"
-			]
-		},
-		{
-			"userId": 7,
-			"username": "DavidTaylor",
-			"password": "password7",
-			"channels": [
-				"Channel 1",
-				"Channel 2",
-				"Channel 3",
-				"Channel 4",
-				"Channel 5"
-			]
-		},
-		{
-			"userId": 8,
-			"username": "OliviaAnderson",
-			"password": "password8",
-			"channels": [
-				"Channel 1",
-				"Channel 2",
-				"Channel 3",
-				"Channel 4",
-				"Channel 5"
-			]
-		},
-		{
-			"userId": 9,
-			"username": "JacobMartin",
-			"password": "password9",
-			"channels": [
-				"Channel 1",
-				"Channel 2",
-				"Channel 3",
-				"Channel 4",
-				"Channel 5"
-			]
-		},
-		{
-			"userId": 10,
-			"username": "EmmaThompson",
-			"password": "password10",
-			"channels": [
-				"Channel 1",
-				"Channel 2",
-				"Channel 3",
-				"Channel 4",
-				"Channel 5"
-			]
-		},
-		{
-			"userId": 11,
-			"username": "MatthewWilson",
-			"password": "password11",
-			"channels": [
-				"Channel 1",
-				"Channel 2",
-				"Channel 3",
-				"Channel 4",
-				"Channel 5"
-			]
-		},
-		{
-			"userId": 12,
-			"username": "AvaGarcia",
-			"password": "password12",
-			"channels": [
-				"Channel 1",
-				"Channel 2",
-				"Channel 3",
-				"Channel 4",
-				"Channel 5"
-			]
-		},
-		{
-			"userId": 13,
-			"username": "JamesThomas",
-			"password": "password13",
-			"channels": [
-				"Channel 1",
-				"Channel 2",
-				"Channel 3",
-				"Channel 4",
-				"Channel 5"
-			]
-		},
-		{
-			"userId": 14,
-			"username": "MiaRobinson",
-			"password": "password14",
-			"channels": [
-				"Channel 1",
-				"Channel 2",
-				"Channel 3",
-				"Channel 4",
-				"Channel 5"
-			]
-		},
-		{
-			"userId": 15,
-			"username": "BenjaminClark",
-			"password": "password15",
-			"channels": [
-				"Channel 1",
-				"Channel 2",
-				"Channel 3",
-				"Channel 4",
-				"Channel 5"
-			]
-		},
-		{
-			"userId": 16,
-			"username": "AbigailHarris",
-			"password": "password16",
-			"channels": [
-				"Channel 1",
-				"Channel 2",
-				"Channel 3",
-				"Channel 4",
-				"Channel 5"
-			]
-		},
-		{
-			"userId": 17,
-			"username": "EthanYoung",
-			"password": "password17",
-			"channels": [
-				"Channel 1",
-				"Channel 2",
-				"Channel 3",
-				"Channel 4",
-				"Channel 5"
-			]
-		},
-		{
-			"userId": 18,
-			"username": "SofiaWalker",
-			"password": "password18",
-			"channels": [
-				"Channel 1",
-				"Channel 2",
-				"Channel 3",
-				"Channel 4",
-				"Channel 5"
-			]
-		},
-		{
-			"userId": 19,
-			"username": "HenryLewis",
-			"password": "password19",
-			"channels": [
-				"Channel 1",
-				"Channel 2",
-				"Channel 3",
-				"Channel 4",
-				"Channel 5"
-			]
-		},
-		{
-			"userId": 20,
-			"username": "AmeliaHall",
-			"password": "password20",
-			"channels": [
-				"Channel 1",
-				"Channel 2",
-				"Channel 3",
-				"Channel 4",
-				"Channel 5"
-			]
-		},
-		{
-			"name": "testuser2",
-			"password": "12345",
-			"channels": [
-				"Channel 1",
-				"Channel 2",
-				"Channel 3",
-				"Channel 4",
-				"Channel 5"
-			],
-			"userId": 23
-		},
-		{
-			"name": "testuser2",
-			"password": "12345",
-			"channels": [
-				"Channel 1",
-				"Channel 2",
-				"Channel 3",
-				"Channel 4",
-				"Channel 5"
-			],
-			"userId": 24
-		}
-	],
-	"channel": [
-		{
-			"channelId": 101,
-			"name": "Channel 1",
-			"locked": false
-		},
-		{
-			"channelId": 102,
-			"name": "Channel 2",
-			"locked": false
-		},
-		{
-			"channelId": 103,
-			"name": "Channel 3",
-			"locked": true
-		},
-		{
-			"channelId": 104,
-			"name": "Channel 4",
-			"locked": true
-		},
-		{
-			"channelId": 105,
-			"name": "Channel 5",
-			"locked": false
-		}
-	],
-	"messages": [
-		{
-			"messageId": 101001,
-			"channelId": 101,
-			"userId": 1,
-			"content": "Hello, everyone!",
-			"timestamp": 1659260400000
-		},
-		{
-			"messageId": 101002,
-			"channelId": 101,
-			"userId": 2,
-			"content": "Welcome to Channel 1!",
-			"timestamp": 1659264000000
-		},
-		{
-			"messageId": 102001,
-			"channelId": 102,
-			"userId": 1,
-			"content": "How is everyone doing?",
-			"timestamp": 1659260400000
-		},
-		{
-			"messageId": 102002,
-			"channelId": 102,
-			"userId": 2,
-			"content": "Let's discuss the latest news!",
-			"timestamp": 1659264000000
-		},
-		{
-			"messageId": 103001,
-			"channelId": 103,
-			"userId": 2,
-			"content": "Only authorized users can access this channel.",
-			"timestamp": 1659260400000
-		},
-		{
-			"messageId": 103002,
-			"channelId": 103,
-			"userId": 7,
-			"content": "I have access to this locked channel.",
-			"timestamp": 1659264000000
-		},
-		{
-			"messageId": 104001,
-			"channelId": 104,
-			"userId": 2,
-			"content": "Only authorized users can access this channel.",
-			"timestamp": 1659260400000
-		},
-		{
-			"messageId": 104002,
-			"channelId": 104,
-			"userId": 3,
-			"content": "I have access to this locked channel.",
-			"timestamp": 1659264000000
-		},
-		{
-			"messageId": 105001,
-			"channelId": 105,
-			"userId": 4,
-			"content": "Let's start a discussion!",
-			"timestamp": 1659260400000
-		},
-		{
-			"messageId": 10,
-			"channelId": 105,
-			"userId": 5,
-			"content": "I'm excited to be part of this channel!",
-			"timestamp": 1659264000000
-		},
-		{
-			"channelId": 105,
-			"userId": 5,
-			"content": "Test2",
-			"messageId": 105002,
-			"timestamp": 1686302394328
-		},
-		{
-			"channelId": 105,
-			"userId": 5,
-			"content": "Test3",
-			"messageId": 105003,
-			"timestamp": 1686302467048
-		},
-		{
-			"channelId": 105,
-			"userId": 5,
-			"content": "Test5000",
-			"messageId": 105005,
-			"timestamp": 1686641471318
-		},
-		{
-			"messageId": 105007,
-			"channelId": 105,
-			"userId": 5,
-			"content": "hallå test",
-			"timestamp": 1686687492216
-		}
-	]
+  "user": [
+    {
+      "userId": 1,
+      "username": "JohnDoe",
+      "password": "password1",
+      "channels": [
+        "channel 1",
+        "channel 2",
+        "channel 4",
+        "channel 5"
+      ]
+    },
+    {
+      "userId": 2,
+      "username": "EmilySmith",
+      "password": "password2",
+      "channels": [
+        "Channel 1",
+        "Channel 2",
+        "Channel 3",
+        "Channel 4",
+        "Channel 5"
+      ]
+    },
+    {
+      "userId": 3,
+      "username": "MichaelJohnson",
+      "password": "password3",
+      "channels": [
+        "Channel 1",
+        "Channel 2",
+        "Channel 3",
+        "Channel 4",
+        "Channel 5"
+      ]
+    },
+    {
+      "userId": 4,
+      "username": "SarahWilliams",
+      "password": "password4",
+      "channels": [
+        "Channel 1",
+        "Channel 2",
+        "Channel 3",
+        "Channel 4",
+        "Channel 5"
+      ]
+    },
+    {
+      "userId": 5,
+      "username": "DanielBrown",
+      "password": "password5",
+      "channels": [
+        "Channel 1",
+        "Channel 2",
+        "Channel 3",
+        "Channel 4",
+        "Channel 5"
+      ]
+    },
+    {
+      "userId": 6,
+      "username": "SophiaLee",
+      "password": "password6",
+      "channels": [
+        "Channel 1",
+        "Channel 2",
+        "Channel 3",
+        "Channel 4",
+        "Channel 5"
+      ]
+    },
+    {
+      "userId": 7,
+      "username": "DavidTaylor",
+      "password": "password7",
+      "channels": [
+        "Channel 1",
+        "Channel 2",
+        "Channel 3",
+        "Channel 4",
+        "Channel 5"
+      ]
+    },
+    {
+      "userId": 8,
+      "username": "OliviaAnderson",
+      "password": "password8",
+      "channels": [
+        "Channel 1",
+        "Channel 2",
+        "Channel 3",
+        "Channel 4",
+        "Channel 5"
+      ]
+    },
+    {
+      "userId": 9,
+      "username": "JacobMartin",
+      "password": "password9",
+      "channels": [
+        "Channel 1",
+        "Channel 2",
+        "Channel 3",
+        "Channel 4",
+        "Channel 5"
+      ]
+    },
+    {
+      "userId": 10,
+      "username": "EmmaThompson",
+      "password": "password10",
+      "channels": [
+        "Channel 1",
+        "Channel 2",
+        "Channel 3",
+        "Channel 4",
+        "Channel 5"
+      ]
+    },
+    {
+      "userId": 11,
+      "username": "MatthewWilson",
+      "password": "password11",
+      "channels": [
+        "Channel 1",
+        "Channel 2",
+        "Channel 3",
+        "Channel 4",
+        "Channel 5"
+      ]
+    },
+    {
+      "userId": 12,
+      "username": "AvaGarcia",
+      "password": "password12",
+      "channels": [
+        "Channel 1",
+        "Channel 2",
+        "Channel 3",
+        "Channel 4",
+        "Channel 5"
+      ]
+    },
+    {
+      "userId": 13,
+      "username": "JamesThomas",
+      "password": "password13",
+      "channels": [
+        "Channel 1",
+        "Channel 2",
+        "Channel 3",
+        "Channel 4",
+        "Channel 5"
+      ]
+    },
+    {
+      "userId": 14,
+      "username": "MiaRobinson",
+      "password": "password14",
+      "channels": [
+        "Channel 1",
+        "Channel 2",
+        "Channel 3",
+        "Channel 4",
+        "Channel 5"
+      ]
+    },
+    {
+      "userId": 15,
+      "username": "BenjaminClark",
+      "password": "password15",
+      "channels": [
+        "Channel 1",
+        "Channel 2",
+        "Channel 3",
+        "Channel 4",
+        "Channel 5"
+      ]
+    },
+    {
+      "userId": 16,
+      "username": "AbigailHarris",
+      "password": "password16",
+      "channels": [
+        "Channel 1",
+        "Channel 2",
+        "Channel 3",
+        "Channel 4",
+        "Channel 5"
+      ]
+    },
+    {
+      "userId": 17,
+      "username": "EthanYoung",
+      "password": "password17",
+      "channels": [
+        "Channel 1",
+        "Channel 2",
+        "Channel 3",
+        "Channel 4",
+        "Channel 5"
+      ]
+    },
+    {
+      "userId": 18,
+      "username": "SofiaWalker",
+      "password": "password18",
+      "channels": [
+        "Channel 1",
+        "Channel 2",
+        "Channel 3",
+        "Channel 4",
+        "Channel 5"
+      ]
+    },
+    {
+      "userId": 19,
+      "username": "HenryLewis",
+      "password": "password19",
+      "channels": [
+        "Channel 1",
+        "Channel 2",
+        "Channel 3",
+        "Channel 4",
+        "Channel 5"
+      ]
+    },
+    {
+      "userId": 20,
+      "username": "AmeliaHall",
+      "password": "password20",
+      "channels": [
+        "Channel 1",
+        "Channel 2",
+        "Channel 3",
+        "Channel 4",
+        "Channel 5"
+      ]
+    },
+    {
+      "name": "testuser2",
+      "password": "12345",
+      "channels": [
+        "Channel 1",
+        "Channel 2",
+        "Channel 3",
+        "Channel 4",
+        "Channel 5"
+      ],
+      "userId": 23
+    },
+    {
+      "name": "testuser2",
+      "password": "12345",
+      "channels": [
+        "Channel 1",
+        "Channel 2",
+        "Channel 3",
+        "Channel 4",
+        "Channel 5"
+      ],
+      "userId": 24
+    }
+  ],
+  "channel": [
+    {
+      "channelId": 101,
+      "name": "Channel 1",
+      "locked": false
+    },
+    {
+      "channelId": 102,
+      "name": "Channel 2",
+      "locked": false
+    },
+    {
+      "channelId": 103,
+      "name": "Channel 3",
+      "locked": true
+    },
+    {
+      "channelId": 104,
+      "name": "Channel 4",
+      "locked": true
+    },
+    {
+      "channelId": 105,
+      "name": "Channel 5",
+      "locked": false
+    }
+  ],
+  "messages": [
+    {
+      "messageId": 101001,
+      "channelId": 101,
+      "userId": 1,
+      "content": "Hello, everyone!",
+      "timestamp": 1659260400000
+    },
+    {
+      "messageId": 101002,
+      "channelId": 101,
+      "userId": 2,
+      "content": "Welcome to Channel 1!",
+      "timestamp": 1659264000000
+    },
+    {
+      "messageId": 102001,
+      "channelId": 102,
+      "userId": 1,
+      "content": "How is everyone doing?",
+      "timestamp": 1659260400000
+    },
+    {
+      "messageId": 102002,
+      "channelId": 102,
+      "userId": 2,
+      "content": "Let's discuss the latest news!",
+      "timestamp": 1659264000000
+    },
+    {
+      "messageId": 103001,
+      "channelId": 103,
+      "userId": 2,
+      "content": "Only authorized users can access this channel.",
+      "timestamp": 1659260400000
+    },
+    {
+      "messageId": 103002,
+      "channelId": 103,
+      "userId": 7,
+      "content": "I have access to this locked channel.",
+      "timestamp": 1659264000000
+    },
+    {
+      "messageId": 104001,
+      "channelId": 104,
+      "userId": 2,
+      "content": "Only authorized users can access this channel.",
+      "timestamp": 1659260400000
+    },
+    {
+      "messageId": 104002,
+      "channelId": 104,
+      "userId": 3,
+      "content": "I have access to this locked channel.",
+      "timestamp": 1659264000000
+    },
+    {
+      "messageId": 105001,
+      "channelId": 105,
+      "userId": 4,
+      "content": "Let's start a discussion!",
+      "timestamp": 1659260400000
+    },
+    {
+      "messageId": 10,
+      "channelId": 105,
+      "userId": 5,
+      "content": "I'm excited to be part of this channel!",
+      "timestamp": 1659264000000
+    },
+    {
+      "channelId": 105,
+      "userId": 5,
+      "content": "Test2",
+      "messageId": 105002,
+      "timestamp": 1686302394328
+    },
+    {
+      "channelId": 105,
+      "userId": 5,
+      "content": "Test3",
+      "messageId": 105003,
+      "timestamp": 1686302467048
+    },
+    {
+      "channelId": 105,
+      "userId": 5,
+      "content": "Test5000",
+      "messageId": 105005,
+      "timestamp": 1686641471318
+    },
+    {
+      "messageId": 105007,
+      "channelId": 105,
+      "userId": 5,
+      "content": "hallå test",
+      "timestamp": 1686687492216
+    },
+    {
+      "messageId": 105008,
+      "channelId": 103,
+      "userId": 2,
+      "content": "hallå test låst",
+      "timestamp": 1687435351147
+    }
+  ]
 }
