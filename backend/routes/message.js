@@ -13,6 +13,7 @@ dotenv.config()
 const router = express.Router()
 const db = getDb()
 const secret = process.env.SECRET || "Supersecret"
+
 //GET /messages
 router.get("/", async (req, res) => {
 	await db.read()
@@ -120,36 +121,6 @@ router.get("/channels/:channelId", async (req, res) => {
 	res.send({ messages })
 })
 
-// //POST /messages
-// router.post("/", async (req, res) => {
-// 	const maybeMessage = req.body
-
-// 	if (!isValidMessage(maybeMessage)) {
-// 		console.log("Body måste innehålla channelId, userId och content")
-// 		res.status(400).send({
-// 			message: "Body måste innehålla channelId, userId och content",
-// 		})
-// 		return
-// 	}
-
-// 	await db.read()
-// 	const messageId = findMaxIdMessage(db.data.messages) + 1
-// 	const timestamp = generateTimestamp()
-
-// 	const newMessage = {
-// 		messageId: messageId,
-// 		channelId: maybeMessage.channelId,
-// 		userId: maybeMessage.userId,
-// 		content: maybeMessage.content,
-// 		timestamp: timestamp,
-// 	}
-
-// 	db.data.messages.push(newMessage)
-// 	await db.write()
-
-// 	res.send({ message: newMessage })
-// })
-
 //POST /messages
 router.post("/", async (req, res) => {
 	console.log(req.body)
@@ -231,38 +202,6 @@ router.delete("/:messageId", async (req, res) => {
 	await db.write()
 	res.sendStatus(200)
 })
-
-// //PUT /messages/:messageId
-// router.put("/:messageId", async (req, res) => {
-// 	if (!isValidId(req.params.messageId)) {
-// 		console.log("inkorrekt id")
-// 		res.status(400).send({ message: "Felaktigt id" })
-// 		return
-// 	}
-// 	let messageId = Number(req.params.messageId)
-// 	if (!isValidMessage(req.body)) {
-// 		console.log("Inkorrekt body")
-// 		res.status(400).send({
-// 			message: "Felaktig body, får endast innehålla siffror",
-// 		})
-// 		return
-// 	}
-// 	let newMessage = req.body
-// 	await db.read()
-// 	let oldMessageIndex = db.data.messages.findIndex(
-// 		(message) => message.messageId === messageId
-// 	)
-// 	if (oldMessageIndex === -1) {
-// 		console.log("Id finns inte var god kontrollera")
-// 		res.status(404).send({ message: "Id finns inte" })
-// 		return
-// 	}
-// 	newMessage.messageId = messageId
-// 	newMessage.timestamp = generateTimestamp()
-// 	db.data.messages[oldMessageIndex] = newMessage
-// 	await db.write()
-// 	res.sendStatus(200)
-// })
 
 //PUT /messages/:messageId
 router.put("/:messageId", async (req, res) => {

@@ -4,7 +4,7 @@
 			"userId": 1,
 			"username": "JohnDoe",
 			"password": "password1",
-			"channels": ["channel 1", "channel 2", "channel 4", "channel 5"]
+			"channels": ["channel 1", "channel 2", "channel 5"]
 		},
 		{
 			"userId": 2,
@@ -22,25 +22,13 @@
 			"userId": 3,
 			"username": "MichaelJohnson",
 			"password": "password3",
-			"channels": [
-				"Channel 1",
-				"Channel 2",
-				"Channel 3",
-				"Channel 4",
-				"Channel 5"
-			]
+			"channels": ["channel 1", "channel 2", "channel 5"]
 		},
 		{
 			"userId": 4,
 			"username": "SarahWilliams",
 			"password": "password4",
-			"channels": [
-				"Channel 1",
-				"Channel 2",
-				"Channel 3",
-				"Channel 4",
-				"Channel 5"
-			]
+			"channels": ["channel 1", "channel 2", "channel 5"]
 		},
 		{
 			"userId": 5,
